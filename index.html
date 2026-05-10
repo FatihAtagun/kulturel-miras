@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kültür Atlası</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="#" aria-label="Kültür Atlası">
+          <span class="brand-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" role="img">
+              <path d="M24 5c3.7 4 3.7 7.6 0 10.9C20.3 12.6 20.3 9 24 5Z" />
+              <path d="M24 43c-3.7-4-3.7-7.6 0-10.9C27.7 35.4 27.7 39 24 43Z" />
+              <path d="M5 24c4-3.7 7.6-3.7 10.9 0C12.6 27.7 9 27.7 5 24Z" />
+              <path d="M43 24c-4 3.7-7.6 3.7-10.9 0C35.4 20.3 39 20.3 43 24Z" />
+              <path d="M11.2 11.2c5.4.2 8 2.8 7.7 7.7C14 19.2 11.4 16.6 11.2 11.2Z" />
+              <path d="M36.8 36.8c-5.4-.2-8-2.8-7.7-7.7C34 28.8 36.6 31.4 36.8 36.8Z" />
+              <path d="M11.2 36.8c.2-5.4 2.8-8 7.7-7.7C19.2 34 16.6 36.6 11.2 36.8Z" />
+              <path d="M36.8 11.2c-.2 5.4-2.8 8-7.7 7.7C28.8 14 31.4 11.4 36.8 11.2Z" />
+              <circle cx="24" cy="24" r="5.2" />
+              <circle cx="24" cy="24" r="14.2" />
+            </svg>
+          </span>
+          <span class="brand-text">Kültür Atlası</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Ana menü">
+          <a class="active" href="#">Anasayfa</a>
+          <a href="#">Şehirler</a>
+          <a href="#">Keşfet</a>
+          <a href="#">Kültürel Miras</a>
+          <a href="#">Etkinlikler</a>
+          <a href="#">Hakkımızda</a>
+        </nav>
+
+        <div class="header-actions" aria-label="Hızlı işlemler">
+          <button type="button" aria-label="Ara">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="6.4" />
+              <path d="m16 16 4.2 4.2" />
+            </svg>
+          </button>
+          <button type="button" aria-label="Kaydet">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 4.5h10a1 1 0 0 1 1 1v15l-6-3.8-6 3.8v-15a1 1 0 0 1 1-1Z" />
+            </svg>
+          </button>
+          <button class="moon-button" type="button" aria-label="Gece modu">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15.8 3.8A7.7 7.7 0 1 0 20.2 15 6.6 6.6 0 1 1 15.8 3.8Z" />
+              <circle cx="18.3" cy="6.2" r="1.2" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <section class="hero-panel" aria-label="Türkiye keşif alanı">
+        <div class="hero-copy">
+          <h1>Türkiye'yi<br />Keşfet</h1>
+          <p>Binlerce yıllık tarih, eşsiz kültür, zengin mutfak ve köklü gelenekler... Her şehirde yeni bir hikaye seni bekliyor.</p>
+          <a class="hero-button" href="#">
+            <span>↗</span>
+            Keşfetmeye Başla
+          </a>
+        </div>
+
+        <div class="hero-art" aria-hidden="true"></div>
+
+        <aside class="side-menu" aria-label="Harita menüsü">
+          <button type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="8" />
+              <path d="M4.5 10.5c3.2.8 5.5.2 7-1.8 1.3-1.8 3.1-2.7 5.4-2.6" />
+              <path d="M8.5 19c.3-2.8 1.4-4.7 3.5-5.7 2.1-1 3.2-2.7 3.4-5.2" />
+            </svg>
+            Harita
+          </button>
+          <button type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 20h16" />
+              <path d="M6 18V9h12v9" />
+              <path d="M3.5 9 12 4l8.5 5" />
+              <path d="M9 18v-6" />
+              <path d="M15 18v-6" />
+            </svg>
+            Miras
+          </button>
+          <button type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="5" y="6.5" width="14" height="13" rx="1.4" />
+              <path d="M8 4v4" />
+              <path d="M16 4v4" />
+              <path d="M5 10.5h14" />
+              <path d="M9 14h1" />
+              <path d="M14 14h1" />
+            </svg>
+            Etkinlikler
+          </button>
+          <button type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.7A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z" />
+            </svg>
+            Favorilerim
+          </button>
+        </aside>
+      </section>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
