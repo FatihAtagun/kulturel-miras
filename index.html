@@ -4,14 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kültür Atlası</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div class="site-shell">
       <header class="site-header">
-        <a class="brand" href="#" aria-label="Kültür Atlası">
+        <a class="brand" href="#/" aria-label="Kültür Atlası anasayfa">
           <span class="brand-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" role="img">
+            <svg viewBox="0 0 48 48">
               <path d="M24 5c3.7 4 3.7 7.6 0 10.9C20.3 12.6 20.3 9 24 5Z" />
               <path d="M24 43c-3.7-4-3.7-7.6 0-10.9C27.7 35.4 27.7 39 24 43Z" />
               <path d="M5 24c4-3.7 7.6-3.7 10.9 0C12.6 27.7 9 27.7 5 24Z" />
@@ -28,87 +31,132 @@
         </a>
 
         <nav class="main-nav" aria-label="Ana menü">
-          <a class="active" href="#">Anasayfa</a>
-          <a href="#">Şehirler</a>
-          <a href="#">Keşfet</a>
-          <a href="#">Kültürel Miras</a>
-          <a href="#">Etkinlikler</a>
-          <a href="#">Hakkımızda</a>
+          <a href="#/" data-route="home">Anasayfa</a>
+          <a href="#/sehirler" data-route="sehirler">Şehirler</a>
+          <a href="#/kesfet" data-route="kesfet">Keşfet</a>
+          <a href="#/miras" data-route="miras">Kültürel Miras</a>
+          <a href="#/etkinlikler" data-route="etkinlikler">Etkinlikler</a>
+          <a href="#/oyna" data-route="oyna">Oyna 🎲</a>
+          <a href="#/hakkimizda" data-route="hakkimizda">Hakkımızda</a>
+          <span class="nav-indicator" aria-hidden="true"></span>
         </nav>
 
         <div class="header-actions" aria-label="Hızlı işlemler">
-          <button type="button" aria-label="Ara">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="11" cy="11" r="6.4" />
-              <path d="m16 16 4.2 4.2" />
-            </svg>
+          <button type="button" data-action="search" aria-label="Ara (Ctrl+K)" title="Ara (Ctrl+K)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.4" /><path d="m16 16 4.2 4.2" /></svg>
           </button>
-          <button type="button" aria-label="Kaydet">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7 4.5h10a1 1 0 0 1 1 1v15l-6-3.8-6 3.8v-15a1 1 0 0 1 1-1Z" />
-            </svg>
-          </button>
-          <button class="moon-button" type="button" aria-label="Gece modu">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M15.8 3.8A7.7 7.7 0 1 0 20.2 15 6.6 6.6 0 1 1 15.8 3.8Z" />
-              <circle cx="18.3" cy="6.2" r="1.2" />
-            </svg>
+          <a class="icon-link" href="#/pasaport" aria-label="Pasaportum" title="Pasaportum">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3.5" width="14" height="17" rx="2" /><circle cx="12" cy="11" r="3.2" /><path d="M8.8 11h6.4M12 7.8c1 1 1 5.4 0 6.4M12 7.8c-1 1-1 5.4 0 6.4M9 17h6" /></svg>
+            <span class="fav-count stamp-count" hidden>0</span>
+          </a>
+          <a class="icon-link" href="#/favoriler" aria-label="Favorilerim" title="Favorilerim">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5h10a1 1 0 0 1 1 1v15l-6-3.8-6 3.8v-15a1 1 0 0 1 1-1Z" /></svg>
+            <span class="fav-count heart-count" hidden>0</span>
+          </a>
+          <button class="moon-button" type="button" data-action="theme" aria-label="Tema değiştir" title="Gece / gündüz">
+            <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.8 3.8A7.7 7.7 0 1 0 20.2 15 6.6 6.6 0 1 1 15.8 3.8Z" /><circle cx="18.3" cy="6.2" r="1.2" /></svg>
+            <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" /><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7" /></svg>
           </button>
         </div>
       </header>
 
-      <section class="hero-panel" aria-label="Türkiye keşif alanı">
-        <div class="hero-copy">
-          <h1>Türkiye'yi<br />Keşfet</h1>
-          <p>Binlerce yıllık tarih, eşsiz kültür, zengin mutfak ve köklü gelenekler... Her şehirde yeni bir hikaye seni bekliyor.</p>
-          <a class="hero-button" href="#">
-            <span>↗</span>
-            Keşfetmeye Başla
-          </a>
-        </div>
+      <main id="app">
+        <!-- ANASAYFA -->
+        <section class="view" data-view="home">
+          <section class="hero-panel" aria-label="Türkiye keşif alanı">
+            <div class="hero-sky" aria-hidden="true">
+              <span class="balloon b1"></span><span class="balloon b2"></span><span class="balloon b3"></span>
+              <span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span><span class="spark s4"></span>
+            </div>
 
-        <div class="hero-art" aria-hidden="true"></div>
+            <div class="hero-copy">
+              <p class="eyebrow reveal">81 il · 7 bölge · binlerce hikâye</p>
+              <h1 class="reveal" style="--d: 80ms">Türkiye'yi<br />Keşfet</h1>
+              <p class="lead reveal" style="--d: 160ms">Binlerce yıllık tarih, eşsiz kültür, zengin mutfak ve köklü gelenekler... Haritada bir şehrin üzerine gel, hikâyesi seni bekliyor.</p>
+              <div class="hero-cta reveal" style="--d: 240ms">
+                <a class="hero-button" href="#/kesfet"><span>↗</span> Keşfetmeye Başla</a>
+                <a class="ghost-button" href="#/oyna/cark">🎡 Kader Çarkı</a>
+              </div>
+            </div>
 
-        <aside class="side-menu" aria-label="Harita menüsü">
-          <button type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="8" />
-              <path d="M4.5 10.5c3.2.8 5.5.2 7-1.8 1.3-1.8 3.1-2.7 5.4-2.6" />
-              <path d="M8.5 19c.3-2.8 1.4-4.7 3.5-5.7 2.1-1 3.2-2.7 3.4-5.2" />
-            </svg>
-            Harita
-          </button>
-          <button type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 20h16" />
-              <path d="M6 18V9h12v9" />
-              <path d="M3.5 9 12 4l8.5 5" />
-              <path d="M9 18v-6" />
-              <path d="M15 18v-6" />
-            </svg>
-            Miras
-          </button>
-          <button type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="5" y="6.5" width="14" height="13" rx="1.4" />
-              <path d="M8 4v4" />
-              <path d="M16 4v4" />
-              <path d="M5 10.5h14" />
-              <path d="M9 14h1" />
-              <path d="M14 14h1" />
-            </svg>
-            Etkinlikler
-          </button>
-          <button type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.7A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z" />
-            </svg>
-            Favorilerim
-          </button>
-        </aside>
-      </section>
+            <div class="hero-art">
+              <div class="map-mode-label" aria-live="polite"></div>
+              <div class="map-host" id="home-map" aria-label="Türkiye il haritası"></div>
+              <div class="map-legend" id="map-legend" aria-hidden="true"></div>
+            </div>
+
+            <aside class="side-menu" aria-label="Harita görünümü">
+              <button type="button" class="active" data-map-mode="harita">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" /><path d="M4.5 10.5c3.2.8 5.5.2 7-1.8 1.3-1.8 3.1-2.7 5.4-2.6" /><path d="M8.5 19c.3-2.8 1.4-4.7 3.5-5.7 2.1-1 3.2-2.7 3.4-5.2" /></svg>
+                Harita
+              </button>
+              <button type="button" data-map-mode="miras">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16" /><path d="M6 18V9h12v9" /><path d="M3.5 9 12 4l8.5 5" /><path d="M9 18v-6" /><path d="M15 18v-6" /></svg>
+                Miras
+              </button>
+              <button type="button" data-map-mode="etkinlik">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="6.5" width="14" height="13" rx="1.4" /><path d="M8 4v4" /><path d="M16 4v4" /><path d="M5 10.5h14" /><path d="M9 14h1" /><path d="M14 14h1" /></svg>
+                Etkinlikler
+              </button>
+              <button type="button" data-map-mode="favori">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.7A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z" /></svg>
+                Favorilerim
+              </button>
+            </aside>
+          </section>
+
+          <section class="culture-strip" aria-label="Kültürün renkleri">
+            <div class="section-title reveal-on-scroll">
+              <h2>Kültürün<br />Renkleri</h2>
+              <span aria-hidden="true"></span>
+            </div>
+            <div class="culture-cards" id="culture-cards"></div>
+            <aside class="featured-cities reveal-on-scroll" aria-label="Öne çıkan şehirler">
+              <h3>Öne Çıkan Şehirler</h3>
+              <ul id="featured-list"></ul>
+              <a href="#/sehirler">Tüm Şehirleri Gör <span>→</span></a>
+            </aside>
+          </section>
+        </section>
+
+        <!-- DİĞER SAYFALAR (script.js tarafından doldurulur) -->
+        <section class="view page" data-view="sehirler" hidden></section>
+        <section class="view page" data-view="kesfet" hidden></section>
+        <section class="view page" data-view="miras" hidden></section>
+        <section class="view page" data-view="etkinlikler" hidden></section>
+        <section class="view page" data-view="hakkimizda" hidden></section>
+        <section class="view page" data-view="favoriler" hidden></section>
+        <section class="view page" data-view="sehir" hidden></section>
+        <section class="view page" data-view="pasaport" hidden></section>
+        <section class="view page" data-view="oyna" hidden></section>
+      </main>
+
+      <footer class="site-footer">
+        <span>© Kültür Atlası — Türkiye'nin yaşayan mirası</span>
+        <span>Veriler derleme niteliğindedir; etkinlik tarihleri yıla göre değişebilir.</span>
+      </footer>
     </div>
 
+    <!-- Haritada üzerine gelinen il kartı -->
+    <div class="city-hover-card" id="hover-card" role="tooltip" aria-hidden="true"></div>
+
+    <!-- Arama paleti -->
+    <div class="search-overlay" id="search" hidden>
+      <div class="search-box" role="dialog" aria-modal="true" aria-label="Şehir veya kültür ara">
+        <div class="search-input-row">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.4" /><path d="m16 16 4.2 4.2" /></svg>
+          <input id="search-input" type="search" placeholder="Şehir, yemek, zanaat, miras ara…" autocomplete="off" />
+          <kbd>Esc</kbd>
+        </div>
+        <ul class="search-results" id="search-results"></ul>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+
+    <script src="./js/turkey-paths.js"></script>
+    <script src="./js/cities.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
